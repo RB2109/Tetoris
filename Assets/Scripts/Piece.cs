@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Piece : MonoBehaviour
 {
+
+    
     public Bord board {get; private set;}
     public TetrominoData data {get; private set;}
     public Vector3Int position {get; private set;}
@@ -13,6 +15,7 @@ public class Piece : MonoBehaviour
     public float stepDelay = 1f;
     public float lockDelay= 0.5f;
 
+    public bool isgameover=false;
     private float stepTime;
     private float lockTime;
     public void Initialize(Bord board, Vector3Int position, TetrominoData data)
@@ -39,8 +42,8 @@ public class Piece : MonoBehaviour
 
     private void Update()
     {
-
-        this.board.Clear(this);
+        
+             this.board.Clear(this);
 
         this.lockTime += Time.deltaTime;
 
@@ -75,6 +78,10 @@ public class Piece : MonoBehaviour
             step(); 
         }
         this.board.Set(this);
+            
+     
+
+       
        
     }
 

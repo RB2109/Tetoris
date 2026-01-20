@@ -3,6 +3,7 @@ using UnityEngine.Tilemaps;
 
 public class Bord : MonoBehaviour
 {
+    public GameObject Panel;
     public Tilemap tilemap {get; private set;}
     public TetrominoData[] tetrominoes;
     public Piece activePiece {get; private set;}
@@ -54,6 +55,11 @@ public class Bord : MonoBehaviour
    private void gameover()
     {
         tilemap.ClearAllTiles();
+        Time.timeScale=0f;
+
+        Panel.gameObject.SetActive(true);
+
+        activePiece.isgameover = true;
     }
 
    public void Set(Piece piece)
