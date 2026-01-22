@@ -21,12 +21,12 @@ public class TransitionManager : MonoBehaviour
     }
    public void Startbutton()
     {
-          SceneManager.LoadScene(0);
+          SceneManager.LoadScene(1);
     }
 
     public void QuitgameButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
     public void QuitButton()
     {
